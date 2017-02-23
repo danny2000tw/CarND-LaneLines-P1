@@ -192,17 +192,19 @@ sup {
 
 <h3>2. Identify potential shortcomings with your current pipeline</h3>
 
-<p>1) The current lane dectection is designed base on the assumption that there's only land lines in the region on interest (no noise), and it is always a straight line.</p>
+<p>1) The current lane dectection is designed base on the assumption that there's only two land lines in the region on interest (no noise), and it is always a straight line.</p>
 
 <p>2) Light and weather condition has not been considered in the implementation.</p>
 
-<p>The detection will fail if the car turns or with obstacles in front of the road. It will also fail with insufficient light in the environment and bad weather condition.</p>
+<p>3) If there's other stright line showing the region on interest, e.g. car showdow, then the pipeline might detect it as a landline.</p>
+
+<p>The detection will fail if the car turns or with other "non-landline" strait lines. It will also fail with insufficient light in the environment and bad weather condition.</p>
 
 <h3>3. Suggest possible improvements to your pipeline</h3>
 
-<p>1) Select region of interest more intelligently so that the region only contains the important information we'd like extract.</p>
+<p>1) Select region of interest more intelligently so that the region only contains the information we'd like extract.</p>
 
-<p>2) Able to detect curve land lines.</p>
+<p>2) Use better compute vision algorithm to detect the curve land lines. E.g., The Hough method for Curve detection. http://homepages.inf.ed.ac.uk/rbf/BOOKS/BANDB/LIB/bandb4_3.pdf</p>
 
 <p>3) Advanced CV Technique to deal with ligh insufficient and bad weather condition.</p>
 </body>
