@@ -1,4 +1,4 @@
-#**Finding Lane Lines on the Road** 
+# **Finding Lane Lines on the Road** 
 
 
 [//]: # (Image References)
@@ -7,10 +7,7 @@
 
 ---
 
-### Reflection
-
-###1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
-
+### Pipeline
 My pipeline consisted of 5 steps. 
 
 * Convert image to grayscale
@@ -34,18 +31,20 @@ Final result on image:
 
 
 
-###2. Identify potential shortcomings with your current pipeline
+### Potential shortcomings with the current pipeline
 
-1) The current lane dectection is designed base on the assumption that there's only land lines in the region on interest (no noise), and it is always a straight line. 
+1) The current lane dectection is designed base on the assumption that there's only two land lines in the region on interest (no noise), and it is always a straight line. 
 
 2) Light and weather condition has not been considered in the implementation. 
 
-The detection will fail if the car turns or with obstacles in front of the road. It will also fail with insufficient light in the environment and bad weather condition.
+3) If there's other stright line showing the region on interest, e.g. car showdow, then the pipeline might detect it as a landline.
 
-###3. Suggest possible improvements to your pipeline
+The detection will fail if the car turns or with other "non-landline" strait lines. It will also fail with insufficient light in the environment and bad weather condition.
 
-1) Select region of interest more intelligently so that the region only contains the important information we'd like extract.
+### Future improvements 
 
-2) Able to detect curve land lines.
+1) Select region of interest more intelligently so that the region only contains the information we'd like extract. 
+
+2) Use better compute vision algorithm to detect the curve land lines. E.g., The Hough method for Curve detection. http://homepages.inf.ed.ac.uk/rbf/BOOKS/BANDB/LIB/bandb4_3.pdf
 
 3) Advanced CV Technique to deal with ligh insufficient and bad weather condition.
